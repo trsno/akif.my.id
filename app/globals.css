@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'theme.css';
+
+@layer base {
+	html {
+		-webkit-tap-highlight-color: transparent;
+		@apply text-text/90;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply text-text;
+	}
+
+	.prose a,
+	a:not(nav a, footer a:not(:hover)) {
+		@apply underline font-normal text-text decoration-accent decoration-1 hover:text-accent after:hover:text-accent;
+	}
+
+	a[target='_blank']:hover:after {
+		@apply content-['_↗'] whitespace-pre font-bold text-xs align-middle font-mono;
+	}
+}
+
+@layer components {
+	.heading {
+		@apply font-bold text-2xl sm:text-4xl mb-8 sm:mb-16;
+	}
+
+	.sub-heading {
+		@apply uppercase font-bold text-text/50 text-xs sm:text-base tracking-widest mb-2;
+	}
+}
+
+.page-uses {
+	@apply grid auto-cols-fr gap-x-12 max-w-screen-md sm:grid-cols-[minmax(max-content,_1fr)_3fr];
+}
+
+.page-uses::before {
+	@apply hidden;
+}
+
+.page-uses > h2 {
+	@apply text-xl sm:text-2xl opacity-75 m-0;
+}
+
+.page-uses > ul {
+	@apply text-lg sm:text-xl mb-8 pl-4 list-none;
+}
+
+.page-uses > ul ul {
+	@apply text-sm sm:text-base p-0 list-none mt-0;
+}
+
+.page-uses > ul li {
+	@apply p-0 mt-0;
+}
