@@ -23,9 +23,9 @@
 		@apply underline font-normal text-text decoration-accent decoration-1 hover:text-accent after:hover:text-accent;
 	}
 
-	a[target='_blank']:hover:after {
+	/* a[target='_blank']:hover:after {
 		@apply content-['_↗'] whitespace-pre font-bold text-xs align-middle font-mono;
-	}
+	} */
 }
 
 @layer components {
